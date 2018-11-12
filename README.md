@@ -22,6 +22,7 @@ Västtrafik använder auktoriseringprotokollet [OAuth2](https://en.wikipedia.org
     "expires_in": 1253,
     "access_token": "3b537cf3-4920-35b5-88e2-13408ac36a4a"
 }
+![Alt text](/pics/Pic1.png?raw=true "Optional Title")
 
 **Steg 2.** GET-request till https://api.vasttrafik.se/bin/rest.exe/v2/location.name  för att hitta hållplats-ID för en hållplats given som en sträng
 
