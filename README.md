@@ -25,5 +25,7 @@ Västtrafik använder auktoriseringprotokollet [OAuth2](https://en.wikipedia.org
 ![Alt text](/pics/Pic1.png?raw=true "Optional Title")
 
 **Steg 2.** GET-request till https://api.vasttrafik.se/bin/rest.exe/v2/location.name  för att hitta hållplats-ID för en hållplats given som en sträng
+![Alt text](/pics/Pic2.png?raw=true "Optional Title")
 
 **Steg 3.** GET-request till https://api.vasttrafik.se/bin/rest.exe/v2/departureBoard  för att med hjälp av hållplats-ID hitta nästa avgångar
+![Alt text](/pics/Pic3.png?raw=true "Optional Title")
