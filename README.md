@@ -16,16 +16,13 @@ Hämtar nästa avgångar från en viss hållplats med hjälp av Västtrafiks API
 Västtrafik använder auktoriseringprotokollet [OAuth2](https://en.wikipedia.org/wiki/OAuth) som tillsammans med hjälp av två fasta tokens (*Nyckel/Key* och *Hemlighet/Secret*) genererar en tillfällig accesstokens som skickas med i efterföljande GET-requests.
 
 **Steg 1.** POST-request till https://api.vasttrafik.se/token med *KEY* och *SECRET* i headern (base64-kodade med kolon emellan). Det ger ett svar enligt
-{
-    "scope": "am_application_scope default",
-    "token_type": "Bearer",
-    "expires_in": 1253,
-    "access_token": "3b537cf3-4920-35b5-88e2-13408ac36a4a"
-}
+
 ![Alt text](/pics/Pic1.png?raw=true "Optional Title")
 
 **Steg 2.** GET-request till https://api.vasttrafik.se/bin/rest.exe/v2/location.name  för att hitta hållplats-ID för en hållplats given som en sträng
+
 ![Alt text](/pics/Pic2.png?raw=true "Optional Title")
 
 **Steg 3.** GET-request till https://api.vasttrafik.se/bin/rest.exe/v2/departureBoard  för att med hjälp av hållplats-ID hitta nästa avgångar
+
 ![Alt text](/pics/Pic3.png?raw=true "Optional Title")
