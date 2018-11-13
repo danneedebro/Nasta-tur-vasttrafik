@@ -3,8 +3,8 @@ import base64
 from datetime import datetime
 
 # USER INPUT
-KEY = 'fYzDg69mhe3eytZLUGiTBrFl2cQa'
-SECRET = '0e163wTfFJAFteDgl607KhMkb2Ia'
+KEY = 'fYzsg6smhs3eysZLUGsTBrFl2cQa'
+SECRET = '0es63wTfFJAsteDgl6s7Khskb2Ia'
 STOP = 'svingeln'
 
 # Step 1: Get Access token
@@ -18,7 +18,7 @@ r = requests.post(url,headers = head, params=parameters)
 tmp = r.json()
 
 ACCESS_TOKEN = tmp['access_token']
-print("Access token är: ",ACCESS_TOKEN)
+print("Access token Ã¤r: ",ACCESS_TOKEN)
 
 
 # Step 2: Get stop id from stop string using api method 'location.name'
@@ -31,7 +31,7 @@ r = requests.get(url,headers=head, params=parameters)
 tmp = r.json()
 
 STOP_ID = tmp['LocationList']['StopLocation'][0]['id']
-print("\nStopID för hållplats '", STOP, "' är ",STOP_ID)
+print("\nStopID fÃ¶r hÃ¥llplats '", STOP, "' Ã¤r ",STOP_ID)
 
 
 # Step 3: Get list of depatures using api method 'departureBoard'
@@ -44,16 +44,16 @@ r = requests.get(url,headers = head, params=parameters)
 
 tmp = r.json()
 
-print("\nAvgångar från " + STOP)
+print("\nAvgÃ¥ngar frÃ¥n " + STOP)
 for i in range(0,len(tmp['DepartureBoard']['Departure'])):
     currItem = tmp['DepartureBoard']['Departure'][i]
     serverDateTime = datetime.strptime(tmp['DepartureBoard']['serverdate'] + ' ' + tmp['DepartureBoard']['servertime'],"%Y-%m-%d %H:%M")
     if 'rtTime' in currItem:
         departInSeconds = datetime.strptime(currItem['rtDate'] + " " + currItem['rtTime'], "%Y-%m-%d %H:%M") - serverDateTime
         #print(hmp)
-        print("Linje ",currItem['sname']," mot ",currItem['direction']," avgår kl ",currItem['rtTime'],' (real), om ',round(departInSeconds.seconds/60,0), ' minuter')
+        print("Linje ",currItem['sname']," mot ",currItem['direction']," avgÃ¥r kl ",currItem['rtTime'],' (real), om ',round(departInSeconds.seconds/60,0), ' minuter')
     else:
         departInSeconds = datetime.strptime(currItem['date'] + " " + currItem['time'],"%Y-%m-%d %H:%M") - serverDateTime
-        print("Linje ", currItem['sname'], " avgår kl ", currItem['time'],' (real), om ',round(departInSeconds.seconds/60,0), ' minuter')
+        print("Linje ", currItem['sname'], " avgÃ¥r kl ", currItem['time'],' (real), om ',round(departInSeconds.seconds/60,0), ' minuter')
 
 
