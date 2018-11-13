@@ -13,7 +13,7 @@ Hämtar nästa avgångar från en viss hållplats med hjälp av Västtrafiks API
 4. Under **"Mina applikationer"** välj aktuell applikation och kopiera tokens med beteckning *Nyckel* och *Hemlighet* och lägg in i koden 
 
 # Vad gör koden
-Västtrafik använder auktoriseringprotokollet [OAuth2](https://en.wikipedia.org/wiki/OAuth) som tillsammans med hjälp av två fasta tokens (*Nyckel/Key* och *Hemlighet/Secret*) genererar en tillfällig accesstokens som skickas med i efterföljande GET-requests. Se även vad Västtrafik skriver om det [här](https://developer.vasttrafik.se/portal/#/guides/oauth2).
+Västtrafik använder auktoriseringprotokollet [OAuth2](https://en.wikipedia.org/wiki/OAuth) som tillsammans med hjälp av två fasta tokens (*Nyckel/Key* och *Hemlighet/Secret*) genererar en tillfällig accesstokens som skickas med i efterföljande GET-requests. Se även vad Västtrafik skriver om det [här](https://developer.vasttrafik.se/portal/#/guides/oauth2) för fler detaljer....
 
 **Steg 1.** POST-request till https://api.vasttrafik.se/token med *KEY* och *SECRET* i headern (base64-kodade med kolon emellan). Det ger ett svar enligt
 
